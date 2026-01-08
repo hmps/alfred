@@ -8,7 +8,7 @@
   },
   "scripts": {
     "build": "bun build --compile src/cli.ts --outfile dist/alfred",
-    "install": "bun run build && cp dist/alfred ~/.local/bin/alfred",
+    "install": "bun run build && cp dist/alfred ~/.local/bin/alfred && xattr -c ~/.local/bin/alfred",
     "lint": "biome check --write --unsafe",
     "typecheck": "tsc --noEmit",
     "test": "bun test"
