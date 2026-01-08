@@ -1,0 +1,28 @@
+{
+  "name": "alfred",
+  "module": "src/cli.ts",
+  "type": "module",
+  "private": true,
+  "bin": {
+    "alfred": "./src/cli.ts"
+  },
+  "scripts": {
+    "build": "bun build --compile src/cli.ts --outfile dist/alfred",
+    "install": "bun run build && cp dist/alfred ~/.local/bin/alfred",
+    "lint": "biome check --write --unsafe",
+    "typecheck": "tsc --noEmit",
+    "test": "bun test"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "^2.3.11",
+    "@types/bun": "latest"
+  },
+  "peerDependencies": {
+    "typescript": "^5"
+  },
+  "dependencies": {
+    "commander": "14.0.2",
+    "cron-parser": "5.4.0",
+    "yaml": "2.8.2"
+  }
+}
